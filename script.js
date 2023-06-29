@@ -47,9 +47,7 @@ function renderCart() {
 // Add item to cart
 function addToCart(productId) {
 	const product = products.find((p) => p.id === productId);
-  const existingItem = cartData.find((item) => item.id === productId);
-
-  if (product && !existingItem) {
+  if (product) {
     cartData.push(product);
     // Update session storage with the updated cart data
     sessionStorage.setItem("cartData", JSON.stringify(cartData));
